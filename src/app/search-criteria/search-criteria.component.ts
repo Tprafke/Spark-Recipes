@@ -18,6 +18,7 @@ export class SearchCriteriaComponent implements OnInit {
       queryParams: {
         term: form.value.searchTerm,
         diet: form.value.diet,
+        calories: form.value.calories,
       },
     });
   };
