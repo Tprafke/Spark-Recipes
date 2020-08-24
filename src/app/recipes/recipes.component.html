@@ -1,5 +1,16 @@
-<li routerLink="/recipe">
+<li>
   <a href="#">{{ recipeRef.recipe.label }}</a>
   <img src="{{ recipeRef.recipe.image }}" />
-  <button>Favorites</button>
+  <button *ngIf="showRecipe === false" (click)="toggleForm()">YUM</button>
+  <div *ngIf="showRecipe === true" class="recipe-container">
+    <div class="recipe">
+      <p>{{ recipeRef.recipe.label }}</p>
+      <a href="{{ recipeRef.recipe.url }}">See Full recipe</a>
+      <p>{{ recipeRef.recipe.calories }} Calories</p>
+      <img src="{{ recipeRef.recipe.image }}" />
+      <p>{{ recipeRef.recipe.totalTime }} Minutes</p>
+      <p>{{ recipeRef.recipe.ingredientLines }}</p>
+    </div>
+  </div>
+  <button (click)="addFavorite(recipeRef)">Favorites</button>
 </li>

@@ -1,1 +1,7 @@
-<p>favorites-page works!</p>
+<ul>
+  <app-favorite
+    *ngFor="let recipe of recipies; index as i"
+    [favoriteRef]="recipe"
+    (deleted)="onDelete(i)"
+  ></app-favorite>
+</ul>
