@@ -9,23 +9,13 @@ export class RecipesService {
   appId: string = 'c976199a';
   key: string = '2eac5301f2a1c59a09a35a7a0e00d279';
 
+  favorites = [];
+
   constructor(private http: HttpClient) {}
 
-  // getData = (
-  //   searchTerm: string,
-  //   dietInput: string,
-  //   caloriesInput: any
-  // ): any => {
-  //   return this.http.get(this.Url, {
-  //     params: {
-  //       app_id: this.appId,
-  //       app_key: this.key,
-  //       q: searchTerm,
-  //       diet: dietInput,
-  //       calories: caloriesInput,
-  //     },
-  //   });
-  // };
+  getFavorites() {
+    return this.favorites;
+  }
 
   getData = (parameters: any): any => {
     let params: any = {};
