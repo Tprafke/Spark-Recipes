@@ -1,5 +1,16 @@
 <form #searchCriteria="ngForm" (ngSubmit)="search(searchCriteria)">
   <label for="searchTerm">Search Term</label>
   <input type="text" id="searchTerm" name="searchTerm" ngModel />
+
+  <label for="diet">Dietary Options</label>
+  <select name="diet" id="diet" ngModel>
+    <option value="none">None</option>
+    <option value="balanced">Balanced</option>
+    <option value="high-protein">High Protein</option>
+
+    <option value="low-fat">Low Fat</option>
+    <option value="low-carb">Low Carb</option>
+  </select>
+
   <button>Search</button>
 </form>

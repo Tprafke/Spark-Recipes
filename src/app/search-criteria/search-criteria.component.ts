@@ -17,6 +17,7 @@ export class SearchCriteriaComponent implements OnInit {
     this.router.navigate(['recipe-list'], {
       queryParams: {
         term: form.value.searchTerm,
+        diet: form.value.diet,
       },
     });
   };

@@ -20,7 +20,8 @@ export class RecipeListComponent implements OnInit {
     this.route.queryParamMap.subscribe((params) => {
       console.log(params.get('term'));
       let term = params.get('term');
-      this.service.getData(term).subscribe((response) => {
+      let dietInput = params.get('diet');
+      this.service.getData(term, dietInput).subscribe((response) => {
         this.recipes = response.hits;
         console.log(this.recipes);
       });
