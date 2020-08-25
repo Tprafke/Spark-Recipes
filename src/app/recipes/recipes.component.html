@@ -1,25 +1,38 @@
-<li>
-  <p>{{ recipeRef.recipe.label }}</p>
-  <img src="{{ recipeRef.recipe.image }}" />
-  <button *ngIf="showRecipe === false" (click)="toggleForm()">YUM</button>
-  <div *ngIf="showRecipe === true" class="recipe-container">
-    <div class="recipe">
-      <button (click)="toggleForm()">X</button>
-      <p>{{ recipeRef.recipe.label }}</p>
-      <a href="{{ recipeRef.recipe.url }}" target="_blank">See Full recipe</a>
-      <p>{{ recipeRef.recipe.calories.toFixed(0) }} Calories</p>
-      <img src="{{ recipeRef.recipe.image }}" />
-      <p>{{ recipeRef.recipe.totalTime }} Minutes</p>
-      <p>{{ recipeRef.recipe.ingredientLines }}</p>
+<section class="card-container">
+  <li class="card">
+    <p class="label">{{ recipeRef.recipe.label }}</p>
+
+    <img src="{{ recipeRef.recipe.image }}" />
+    <button class="btn" *ngIf="showRecipe === false" (click)="toggleForm()">
+      YUM
+    </button>
+
+    <div *ngIf="showRecipe === true" class="recipe-container">
+      <div class="recipe">
+        <button class="btnx" (click)="toggleForm()">X</button>
+        <p>{{ recipeRef.recipe.label }}</p>
+        <a class="link" href="{{ recipeRef.recipe.url }}" target="_blank"
+          >See Full recipe</a
+        >
+        <p>{{ recipeRef.recipe.calories.toFixed(0) }} Calories</p>
+        <img src="{{ recipeRef.recipe.image }}" />
+        <p>{{ recipeRef.recipe.totalTime }} Minutes</p>
+        <p>{{ recipeRef.recipe.ingredientLines }}</p>
+      </div>
     </div>
-  </div>
-  <p *ngIf="showFavorite === true">true</p>
-  <p *ngIf="showFavorite === false">false</p>
-  <button
-    *ngIf="showFavorite === false"
-    (click)="addFavorite(recipeRef)"
-    (click)="toggleFavorite()"
-  >
-    Favorites
-  </button>
-</li>
+
+    <img
+      class="icon"
+      src="../assets/fire-gray.svg"
+      *ngIf="showFavorite === false"
+      (click)="addFavorite(recipeRef)"
+      (click)="toggleFavorite()"
+    />
+    <img
+      class="icon"
+      src="../assets/icon-fire.svg"
+      *ngIf="showFavorite === true"
+      (click)="toggleFavorite()"
+    />
+  </li>
+</section>

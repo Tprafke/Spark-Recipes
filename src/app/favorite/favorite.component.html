@@ -1,18 +1,24 @@
-<li>
-  <p>{{ favoriteRef.recipe.label }}</p>
-  <img src="{{ favoriteRef.recipe.image }}" />
-  <button *ngIf="showRecipe === false" (click)="toggleForm()">YUM</button>
-  <div *ngIf="showRecipe === true" class="recipe-container">
-    <div class="recipe">
-      <button (click)="toggleForm()">X</button>
-      <p>{{ favoriteRef.recipe.label }}</p>
-      <a href="{{ favoriteRef.recipe.url }}" target="_blank">See Full recipe</a>
-      <p>{{ favoriteRef.recipe.calories.toFixed(0) }} Calories</p>
-      <img src="{{ favoriteRef.recipe.image }}" />
-      <p>{{ favoriteRef.recipe.totalTime }} Minutes</p>
-      <p>{{ favoriteRef.recipe.ingredientLines }}</p>
+<section class="card-container">
+  <li class="card">
+    <p class="label">{{ favoriteRef.recipe.label }}</p>
+    <img src="{{ favoriteRef.recipe.image }}" />
+    <button class="btn" *ngIf="showRecipe === false" (click)="toggleForm()">
+      YUM
+    </button>
+    <div *ngIf="showRecipe === true" class="recipe-container">
+      <div class="recipe">
+        <button class="btnx" (click)="toggleForm()">X</button>
+        <p>{{ favoriteRef.recipe.label }}</p>
+        <a class="link" href="{{ favoriteRef.recipe.url }}" target="_blank"
+          >See Full recipe</a
+        >
+        <p>{{ favoriteRef.recipe.calories.toFixed(0) }} Calories</p>
+        <img src="{{ favoriteRef.recipe.image }}" />
+        <p>{{ favoriteRef.recipe.totalTime }} Minutes</p>
+        <p>{{ favoriteRef.recipe.ingredientLines }}</p>
+      </div>
     </div>
-  </div>
 
-  <button (click)="deleteRecipe()">Remove</button>
-</li>
+    <button class="btn" (click)="deleteRecipe()">Remove</button>
+  </li>
+</section>

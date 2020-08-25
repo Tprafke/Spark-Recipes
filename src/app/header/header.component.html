@@ -1,8 +1,12 @@
-<header class="header">
-  <img src="icon-fire.svg" alt="#" class="icon" />Ignite Recipes
-  <img src="icon-fire.svg" alt="#" class="icon" />
+<header class="header" routerLink="/recipe-list">
+  <img src="../assets/icon-fire.svg" alt="#" class="icon" />Spark Recipes
+  <img src="../assets/icon-fire.svg" alt="#" class="icon" />
 </header>
 <nav class="nav">
-  <li class="list" routerLink="/recipe-list">search</li>
-  <li class="list" routerLink="/favorites">favorites</li>
+  <img
+    src="../assets/white-magnifying-glass.svg"
+    class="list"
+    routerLink="/recipe-list"
+  />
+  <img src="../assets/white-flame.svg" class="list" routerLink="/favorites" />
 </nav>

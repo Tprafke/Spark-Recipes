@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-search-criteria></app-search-criteria>
-<button routerLink="/favorites">Faves baysh</button>
-<ul>
+
+<ul class="card-container">
   <app-recipes
     *ngFor="let recipe of recipes"
     [recipeRef]="recipe"

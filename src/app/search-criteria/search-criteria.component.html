@@ -1,26 +1,40 @@
-<form #searchCriteria="ngForm" (ngSubmit)="search(searchCriteria)">
-  <label for="searchTerm">Search Term</label>
-  <input type="text" id="searchTerm" name="searchTerm" ngModel />
+<main class="main">
+  <section class="form-container">
+    <form
+      #searchCriteria="ngForm"
+      (ngSubmit)="search(searchCriteria)"
+      class="form"
+    >
+      <label class="label" for="searchTerm">Search Term</label>
+      <input
+        class="input"
+        type="text"
+        id="searchTerm"
+        name="searchTerm"
+        ngModel
+      />
 
-  <label for="diet">Dietary Options</label>
-  <select name="diet" id="diet" ngModel>
-    <option value="none">None</option>
-    <option value="balanced">Balanced</option>
-    <option value="high-protein">High Protein</option>
+      <label class="label" for="diet">Dietary Options</label>
+      <select class="input" name="diet" id="diet" ngModel>
+        <option value="none">None</option>
+        <option value="balanced">Balanced</option>
+        <option value="high-protein">High Protein</option>
 
-    <option value="low-fat">Low Fat</option>
-    <option value="low-carb">Low Carb</option>
-  </select>
+        <option value="low-fat">Low Fat</option>
+        <option value="low-carb">Low Carb</option>
+      </select>
 
-  <label for="calories">Calories per serving</label>
-  <select name="calories" id="calories" ngModel>
-    <option value="none">None</option>
-    <option value="150-499">150-499</option>
-    <option value="500-999">500-999</option>
-    <option value="1000-1499">1000-1499</option>
-    <option value="1500-1999">1500-1999</option>
-    <option value="2000-5000">2000-5000</option>
-  </select>
+      <label class="label" for="calories">Calories per serving</label>
+      <select class="input" name="calories" id="calories" ngModel>
+        <option value="none">None</option>
+        <option value="150-499">150-499</option>
+        <option value="500-999">500-999</option>
+        <option value="1000-1499">1000-1499</option>
+        <option value="1500-1999">1500-1999</option>
+        <option value="2000-5000">2000-5000</option>
+      </select>
 
-  <button>Search</button>
-</form>
+      <button class="btn">Find Recipes</button>
+    </form>
+  </section>
+</main>
