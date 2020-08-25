@@ -11,6 +11,8 @@ export class RecipesComponent implements OnInit {
 
   showRecipe: boolean = false;
 
+  showFavorite: boolean = false;
+
   constructor(private service: RecipesService) {}
 
   addFavorite(favorite: any) {
@@ -20,6 +22,10 @@ export class RecipesComponent implements OnInit {
 
   toggleForm() {
     this.showRecipe = !this.showRecipe;
+  }
+
+  toggleFavorite() {
+    this.showFavorite = !this.showFavorite;
   }
 
   ngOnInit(): void {}

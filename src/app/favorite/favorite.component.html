@@ -1,5 +1,18 @@
 <li>
-  <a href="#">{{ favoriteRef.recipe.label }}</a>
+  <p>{{ favoriteRef.recipe.label }}</p>
   <img src="{{ favoriteRef.recipe.image }}" />
+  <button *ngIf="showRecipe === false" (click)="toggleForm()">YUM</button>
+  <div *ngIf="showRecipe === true" class="recipe-container">
+    <div class="recipe">
+      <button (click)="toggleForm()">X</button>
+      <p>{{ favoriteRef.recipe.label }}</p>
+      <a href="{{ favoriteRef.recipe.url }}" target="_blank">See Full recipe</a>
+      <p>{{ favoriteRef.recipe.calories.toFixed(0) }} Calories</p>
+      <img src="{{ favoriteRef.recipe.image }}" />
+      <p>{{ favoriteRef.recipe.totalTime }} Minutes</p>
+      <p>{{ favoriteRef.recipe.ingredientLines }}</p>
+    </div>
+  </div>
+
   <button (click)="deleteRecipe()">Remove</button>
 </li>

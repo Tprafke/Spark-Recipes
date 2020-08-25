@@ -8,7 +8,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class FavoriteComponent implements OnInit {
   @Input() favoriteRef: any;
   @Output() deleted = new EventEmitter<void>();
+
+  showRecipe: boolean = false;
+
   constructor() {}
+
+  toggleForm() {
+    this.showRecipe = !this.showRecipe;
+  }
 
   deleteRecipe() {
     this.deleted.emit();

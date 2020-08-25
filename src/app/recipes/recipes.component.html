@@ -1,16 +1,25 @@
 <li>
-  <a href="#">{{ recipeRef.recipe.label }}</a>
+  <p>{{ recipeRef.recipe.label }}</p>
   <img src="{{ recipeRef.recipe.image }}" />
   <button *ngIf="showRecipe === false" (click)="toggleForm()">YUM</button>
   <div *ngIf="showRecipe === true" class="recipe-container">
     <div class="recipe">
+      <button (click)="toggleForm()">X</button>
       <p>{{ recipeRef.recipe.label }}</p>
-      <a href="{{ recipeRef.recipe.url }}">See Full recipe</a>
-      <p>{{ recipeRef.recipe.calories }} Calories</p>
+      <a href="{{ recipeRef.recipe.url }}" target="_blank">See Full recipe</a>
+      <p>{{ recipeRef.recipe.calories.toFixed(0) }} Calories</p>
       <img src="{{ recipeRef.recipe.image }}" />
       <p>{{ recipeRef.recipe.totalTime }} Minutes</p>
       <p>{{ recipeRef.recipe.ingredientLines }}</p>
     </div>
   </div>
-  <button (click)="addFavorite(recipeRef)">Favorites</button>
+  <p *ngIf="showFavorite === true">true</p>
+  <p *ngIf="showFavorite === false">false</p>
+  <button
+    *ngIf="showFavorite === false"
+    (click)="addFavorite(recipeRef)"
+    (click)="toggleFavorite()"
+  >
+    Favorites
+  </button>
 </li>
