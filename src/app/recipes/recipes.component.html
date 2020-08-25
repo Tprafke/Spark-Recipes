@@ -1,4 +1,4 @@
-<section class="card-container">
+<div>
   <li class="card">
     <p class="label">{{ recipeRef.recipe.label }}</p>
 
@@ -6,20 +6,6 @@
     <button class="btn" *ngIf="showRecipe === false" (click)="toggleForm()">
       YUM
     </button>
-
-    <div *ngIf="showRecipe === true" class="recipe-container">
-      <div class="recipe">
-        <button class="btnx" (click)="toggleForm()">X</button>
-        <p>{{ recipeRef.recipe.label }}</p>
-        <a class="link" href="{{ recipeRef.recipe.url }}" target="_blank"
-          >See Full recipe</a
-        >
-        <p>{{ recipeRef.recipe.calories.toFixed(0) }} Calories</p>
-        <img src="{{ recipeRef.recipe.image }}" />
-        <p>{{ recipeRef.recipe.totalTime }} Minutes</p>
-        <p>{{ recipeRef.recipe.ingredientLines }}</p>
-      </div>
-    </div>
 
     <img
       class="icon"
@@ -35,4 +21,18 @@
       (click)="toggleFavorite()"
     />
   </li>
-</section>
+</div>
+
+<div *ngIf="showRecipe === true" class="recipe-container">
+  <div class="recipe">
+    <button class="btnx" (click)="toggleForm()">X</button>
+    <p>{{ recipeRef.recipe.label }}</p>
+    <a class="link" href="{{ recipeRef.recipe.url }}" target="_blank"
+      >See Full recipe</a
+    >
+    <p>{{ recipeRef.recipe.calories.toFixed(0) }} Calories</p>
+    <img src="{{ recipeRef.recipe.image }}" />
+    <p>{{ recipeRef.recipe.totalTime }} Minutes</p>
+    <p>{{ recipeRef.recipe.ingredientLines }}</p>
+  </div>
+</div>
