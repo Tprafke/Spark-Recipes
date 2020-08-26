@@ -8,5 +8,16 @@
     class="list"
     (click)="goBack()"
   />
-  <img src="../assets/white-flame.svg" class="list" routerLink="/favorites" />
+  <img
+    *ngIf="favorites.length === 0"
+    src="../assets/white-flame.svg"
+    class="list"
+    routerLink="/favorites"
+  />
+  <img
+    *ngIf="favorites.length > 0"
+    src="../assets/icon-fire.svg"
+    class="list"
+    routerLink="/favorites"
+  />
 </nav>

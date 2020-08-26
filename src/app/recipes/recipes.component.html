@@ -12,13 +12,12 @@
       src="../assets/fire-gray.svg"
       *ngIf="showFavorite === false"
       (click)="addFavorite(recipeRef)"
-      (click)="toggleFavorite()"
     />
     <img
       class="icon"
       src="../assets/icon-fire.svg"
       *ngIf="showFavorite === true"
-      (click)="toggleFavorite()"
+      (click)="addFavorite(recipeRef)"
     />
   </li>
 </div>

@@ -17,6 +17,17 @@ export class RecipesService {
     return this.favorites;
   }
 
+  addFavorite = (recipe: any) => {
+    let index = this.favorites.findIndex((favorite) => {
+      return favorite === recipe;
+    });
+    if (index >= 0) {
+      this.favorites.splice(index, 1);
+    } else {
+      this.favorites.push(recipe);
+    }
+  };
+
   getData = (parameters: any): any => {
     let params: any = {};
     params.app_id = this.appId;

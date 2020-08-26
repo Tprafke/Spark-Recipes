@@ -16,8 +16,8 @@ export class RecipesComponent implements OnInit {
   constructor(private service: RecipesService) {}
 
   addFavorite(favorite: any) {
-    this.service.favorites.push(favorite);
-    console.log(this.service.favorites);
+    this.service.addFavorite(favorite);
+    this.toggleFavorite();
   }
 
   toggleForm() {
