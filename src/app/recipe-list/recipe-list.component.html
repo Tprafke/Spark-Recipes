@@ -3,7 +3,7 @@
 
 <ul class="card-container">
   <app-recipes
-    *ngFor="let recipe of recipes"
+    *ngFor="let recipe of recipes; index as i"
     [recipeRef]="recipe"
   ></app-recipes>
 </ul>

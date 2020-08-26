@@ -21,5 +21,6 @@ export class SearchCriteriaComponent implements OnInit {
         calories: form.value.calories,
       },
     });
+    form.reset();
   };
 }
